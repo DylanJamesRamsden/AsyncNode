@@ -12,7 +12,7 @@ class ADBroadcastingActor;
  * 
  */
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBooleanCheckOutputPin);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIsDeadChangedOutputPin);
 
 UCLASS()
 class ASYNCNODE_API UAsyncIsDeadCheckNode : public UBlueprintAsyncActionBase
@@ -33,7 +33,7 @@ protected:
 
 public:
 	UPROPERTY(BlueprintAssignable)
-	FBooleanCheckOutputPin BooleanChanged;
+	FIsDeadChangedOutputPin OnIsDeadChanged;
 
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
 	static UAsyncIsDeadCheckNode* AsyncIsDeadChanged(ADBroadcastingActor* BroadcastingActor);

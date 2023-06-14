@@ -28,6 +28,6 @@ void UAsyncIsDeadCheckNode::IsDeadChanged(bool NewValue)
 {
 	if (NewValue != InitialBoolValue)
 	{
-		BooleanChanged.Broadcast();
+		OnIsDeadChanged.Broadcast();
 	}
 }
