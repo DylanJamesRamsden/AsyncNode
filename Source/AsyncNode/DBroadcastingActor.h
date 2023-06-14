@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "DBroadcastingActor.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIsAliveChanged)
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIsAliveChanged);
 
 UCLASS()
 class ASYNCNODE_API ADBroadcastingActor : public AActor
