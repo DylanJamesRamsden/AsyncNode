@@ -26,6 +26,7 @@ protected:
 
 public:
 
+	// Delegate that is broadcasted when IsDead changes
 	FIsDeadChanged OnIsDeadChanged;
 
 	UFUNCTION(BlueprintCallable)

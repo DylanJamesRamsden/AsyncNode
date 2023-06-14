@@ -27,6 +27,8 @@ protected:
 	UPROPERTY()
 	ADBroadcastingActor* MyBroadcastingActor;
 
+	// A reference to the initial value of IsDead from MyBroadcastingActor. Used to compare
+	// with the new value to ensure the BooleanChanged delegate isn't misfired
 	bool InitialBoolValue;
 
 	virtual void Activate() override;
