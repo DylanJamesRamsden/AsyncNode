@@ -5,11 +5,9 @@
 
 #include "DBroadcastingActor.h"
 
-UAsyncIsDeadCheckNode* UAsyncIsDeadCheckNode::AsyncIsDeadChanged(const UObject* WorldContextObject,
-                                                                  ADBroadcastingActor* BroadcastingActor)
+UAsyncIsDeadCheckNode* UAsyncIsDeadCheckNode::AsyncIsDeadChanged(ADBroadcastingActor* BroadcastingActor)
 {
 	UAsyncIsDeadCheckNode* NewBooleanChangedCheck = NewObject<UAsyncIsDeadCheckNode>();
-	NewBooleanChangedCheck->WorldContextObject = WorldContextObject;
 	NewBooleanChangedCheck->MyBroadcastingActor = BroadcastingActor;
 
 	return NewBooleanChangedCheck;

@@ -20,8 +20,6 @@ class ASYNCNODE_API UAsyncIsDeadCheckNode : public UBlueprintAsyncActionBase
 	GENERATED_BODY()
 
 protected:
-	
-	const UObject* WorldContextObject;
 
 	// The actor that will broadcast it's boolean change
 	UPROPERTY()
@@ -37,8 +35,8 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FBooleanCheckOutputPin BooleanChanged;
 
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"))
-	static UAsyncIsDeadCheckNode* AsyncIsDeadChanged(const UObject* WorldContextObject, ADBroadcastingActor* BroadcastingActor);
+	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
+	static UAsyncIsDeadCheckNode* AsyncIsDeadChanged(ADBroadcastingActor* BroadcastingActor);
 
 	UFUNCTION()
 	void IsDeadChanged(bool NewValue);
