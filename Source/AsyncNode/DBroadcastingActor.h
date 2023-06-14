@@ -23,6 +23,9 @@ protected:
 
 	bool bIsDead;
 
+	UPROPERTY(EditDefaultsOnly)
+	UStaticMeshComponent* StaticMeshComp;
+
 public:
 
 	FIsDeadChanged OnIsDeadChanged;
