@@ -27,10 +27,15 @@ protected:
 	UPROPERTY()
 	ADBroadcastingActor* MyBroadcastingActor;
 
+	virtual void Activate() override;
+
 public:
 	UPROPERTY(BlueprintAssignable)
 	FBooleanCheckOutputPin BooleanChanged;
 
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"))
 	static UBooleanChangedCheck* CheckForBooleanChange(const UObject* WorldContextObject, ADBroadcastingActor* BroadcastingActor);
+
+	UFUNCTION()
+	void OnBooleanChanged();
 };
