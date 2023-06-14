@@ -21,7 +21,7 @@ void UBooleanChangedCheck::Activate()
 
 	if (MyBroadcastingActor)
 	{
-		MyBroadcastingActor->OnIsAliveChanged.AddDynamic(this, &UBooleanChangedCheck::OnBooleanChanged);
+		MyBroadcastingActor->OnIsDeadChanged.AddDynamic(this, &UBooleanChangedCheck::OnBooleanChanged);
 	}
 }
 
