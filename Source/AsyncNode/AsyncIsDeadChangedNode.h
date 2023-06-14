@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
-#include "BooleanChangedCheck.generated.h"
+#include "AsyncIsDeadChangedNode.generated.h"
 
 class ADBroadcastingActor;
 
@@ -15,7 +15,7 @@ class ADBroadcastingActor;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBooleanCheckOutputPin);
 
 UCLASS()
-class ASYNCNODE_API UBooleanChangedCheck : public UBlueprintAsyncActionBase
+class ASYNCNODE_API UAsyncIsDeadCheckNode : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
 
@@ -27,6 +27,8 @@ protected:
 	UPROPERTY()
 	ADBroadcastingActor* MyBroadcastingActor;
 
+	bool InitialBoolValue;
+
 	virtual void Activate() override;
 
 public:
@@ -34,8 +36,8 @@ public:
 	FBooleanCheckOutputPin BooleanChanged;
 
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"))
-	static UBooleanChangedCheck* CheckForBooleanChange(const UObject* WorldContextObject, ADBroadcastingActor* BroadcastingActor);
+	static UAsyncIsDeadCheckNode* AsyncIsDeadChanged(const UObject* WorldContextObject, ADBroadcastingActor* BroadcastingActor);
 
 	UFUNCTION()
-	void OnBooleanChanged();
+	void IsDeadChanged(bool NewValue);
 };
