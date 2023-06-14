@@ -18,8 +18,6 @@ public:
 	ADBroadcastingActor();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 	bool bIsDead;
 
@@ -29,9 +27,6 @@ protected:
 public:
 
 	FIsDeadChanged OnIsDeadChanged;
-	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
 	void SetIsDead(bool NewValue);

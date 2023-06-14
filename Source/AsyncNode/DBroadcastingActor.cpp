@@ -14,20 +14,6 @@ ADBroadcastingActor::ADBroadcastingActor()
 	RootComponent = StaticMeshComp;
 }
 
-// Called when the game starts or when spawned
-void ADBroadcastingActor::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void ADBroadcastingActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
 void ADBroadcastingActor::SetIsDead(bool NewValue)
 {
 	// Could add a check here to see if the new value is not equal to the old. But doing that in the
