@@ -3,3 +3,12 @@
 
 #include "BooleanChangedCheck.h"
 
+UBooleanChangedCheck* UBooleanChangedCheck::CheckForBooleanChange(const UObject* WorldContextObject,
+	AActor* BroadcastingActor)
+{
+	UBooleanChangedCheck* NewBooleanChangedCheck = NewObject<UBooleanChangedCheck>();
+	NewBooleanChangedCheck->WorldContextObject = WorldContextObject;
+	NewBooleanChangedCheck->MyBroadcastingActor = BroadcastingActor;
+
+	return NewBooleanChangedCheck;
+}

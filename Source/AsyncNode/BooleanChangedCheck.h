@@ -9,9 +9,26 @@
 /**
  * 
  */
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBooleanCheckOutputPin);
+
 UCLASS()
 class ASYNCNODE_API UBooleanChangedCheck : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
+
+protected:
 	
+	const UObject* WorldContextObject;
+
+	// The actor that will broadcast it's boolean change
+	UPROPERTY()
+	AActor* MyBroadcastingActor;
+
+public:
+	UPROPERTY(BlueprintAssignable)
+	FBooleanCheckOutputPin BooleanChanged;
+
+	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"))
+	static UBooleanChangedCheck* CheckForBooleanChange(const UObject* WorldContextObject, AActor* BroadcastingActor);
 };
