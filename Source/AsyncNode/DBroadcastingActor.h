@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "DBroadcastingActor.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIsDeadChanged);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FIsDeadChanged, bool, NewValue);
 
 UCLASS()
 class ASYNCNODE_API ADBroadcastingActor : public AActor
@@ -32,5 +32,11 @@ public:
 	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable)
+	void SetIsDead(bool NewValue);
+
+	UFUNCTION(BlueprintCallable)
+	bool GetIsDead();
 
 };

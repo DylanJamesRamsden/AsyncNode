@@ -28,3 +28,18 @@ void ADBroadcastingActor::Tick(float DeltaTime)
 
 }
 
+void ADBroadcastingActor::SetIsDead(bool NewValue)
+{
+	// Could add a check here to see if the new value is not equal to the old. But doing that in the
+	// AsyncNode class on change
+	
+	bIsDead = NewValue;
+
+	OnIsDeadChanged.Broadcast(NewValue);
+}
+
+bool ADBroadcastingActor::GetIsDead()
+{
+	return bIsDead;
+}
+
