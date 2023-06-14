@@ -6,6 +6,8 @@
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "BooleanChangedCheck.generated.h"
 
+class ADBroadcastingActor;
+
 /**
  * 
  */
@@ -23,12 +25,12 @@ protected:
 
 	// The actor that will broadcast it's boolean change
 	UPROPERTY()
-	AActor* MyBroadcastingActor;
+	ADBroadcastingActor* MyBroadcastingActor;
 
 public:
 	UPROPERTY(BlueprintAssignable)
 	FBooleanCheckOutputPin BooleanChanged;
 
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"))
-	static UBooleanChangedCheck* CheckForBooleanChange(const UObject* WorldContextObject, AActor* BroadcastingActor);
+	static UBooleanChangedCheck* CheckForBooleanChange(const UObject* WorldContextObject, ADBroadcastingActor* BroadcastingActor);
 };

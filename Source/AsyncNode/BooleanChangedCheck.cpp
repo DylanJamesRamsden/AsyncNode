@@ -4,7 +4,7 @@
 #include "BooleanChangedCheck.h"
 
 UBooleanChangedCheck* UBooleanChangedCheck::CheckForBooleanChange(const UObject* WorldContextObject,
-	AActor* BroadcastingActor)
+	ADBroadcastingActor* BroadcastingActor)
 {
 	UBooleanChangedCheck* NewBooleanChangedCheck = NewObject<UBooleanChangedCheck>();
 	NewBooleanChangedCheck->WorldContextObject = WorldContextObject;
